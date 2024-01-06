@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../img/liyue.png');
+    background-size: cover;
+    background-position: center;
+    font-family: 'roboto', sans-serif;
+}
+
+.container{
+    position: relative;
+    width: 90%;
+    height: 87vh;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,160,176,0.5); 
+    margin:0 auto;
+}
+
+.chart{
+    position: absolute;
+    top:30%;
+    display: flex;
+    width:40%;
+    height:67vx;
+    background-color: transparent;
+}
+
+.chart2{
+    position: absolute;
+    top:30%;
+    display: flex;
+    width:60%;
+    height:67vx;
+    background-color: transparent;
+}
+
+.title{
+    position: absolute;
+    top:40px;
+    font-family: 'dosis';
+    font-size: 60px;
+    text-align: center;
+    color: rgba(255, 255, 255,1);
+    font-weight: 500;
+    text-transform: capitalize;
+    border: none;
+    cursor: pointer;
+    opacity: 1;
+    background-color: transparent;
+}
+
+.subheading{
+    position: absolute;
+    top:125px;
+    font-family: 'dosis';
+    font-size: 30px;
+    text-align: center;
+    color: rgba(255, 255, 255,1);
+    font-weight: 400;
+    text-transform: capitalize;
+    border: none;
+    cursor: pointer;
+    opacity: 1;
+    background-color: transparent;
+}
+
+
+
+.barChart{
+    position:fixed;
+    width:30%;
+    height:67vx;
+    margin:0;
+}
+
+.radarChart{
+    position:fixed;
+    width:40%;
+    height:77vx;
+    margin:0;
+}
+
+.linkChart{
+
+    position: absolute;
+    top: 150px;
+    font-size:large;
+    text-align: center;
+    text-transform: capitalize;
+    color: rgba(255, 255, 255, 0.8);
+    display: block;
+    margin: 30px auto;
+}
+.linkChart:hover{
+    color: #fff;
+}
+
+.linkPage{
+    position: absolute;
+    bottom: 40px;
+    text-align: center;
+    text-transform: capitalize;
+    color: rgba(255, 255, 255, 0.8);
+    display: block;
+    margin: 30px auto;
+    
+}
+.linkPage:hover{
+    color: #fff;
+}
+
