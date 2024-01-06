@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lan="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Info</title>
+    <link rel="stylesheet" href="css/show.css">
+    <link rel="stylesheet" href="css/util.css">
+</head>
+
+<body>
+    <div class = "container">
+        <h1 class = "title">
+          Show Device Information
+        </h1>
+        <h2 class = "subheading">Device Activity</h2>
+        <div class="chart2">
+        <canvas class = "radarChart" width="400" height="400"></canvas>
+        </div>
+        <a href = "/barChart" class = "linkChart">See Bar Chart</a>
+        <a href="/house" class="linkPage">Create More Devices</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx2 = document.getElementsByClassName('radarChart');
+        const data2 = {
+        labels: ['Laptops','Monitors','Smartphones','E-readers','Digital Cameras','Portable Music Player'],
+        datasets: [{
+            label: 'Device Activity',
+            data: [2, 1, 2, 1, 0, 1],
+            fill: true,
+            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+            borderColor: 'rgb(255, 99, 132)',
+            pointBackgroundColor: 'rgb(255, 99, 132)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgb(255, 99, 132)'
+        }, {
+            label: 'Device Capacity',
+            data: [4,2, 2, 1, 1, 2],
+            fill: true,
+            backgroundColor: 'rgba(255, 205, 86, 0.6)',
+            borderColor: 'rgb(255, 205, 86)',
+            pointBackgroundColor: 'rgb(255, 205, 86)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgb(255, 205, 86)'
+        }]
+        };
+        const config2 = {
+        type: 'radar',
+        data: data2,
+        options: {
+            responsive: true, // 设置图表为响应式，根据屏幕窗口变化而变化
+            maintainAspectRatio: false,// 保持图表原有比例
+            elements: {
+            line: {
+                borderWidth: 3 // 设置线条宽度
+            }
+            }
+        }
+        };
+        const myChart2 = new Chart(ctx2, config2);
+    </script>
+      
+    
+</body>
+
+</html>
