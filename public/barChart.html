@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lan="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Info</title>
+    <link rel="stylesheet" href="css/show.css">
+    <link rel="stylesheet" href="css/util.css">
+</head>
+
+<body>
+    <div class = "container">
+        <h1 class = "title">
+          Show Device Information
+        </h1>
+        <h2 class = "subheading">Device Count According to Category</h2>
+        <div class="chart">
+        <canvas class = "barChart" width = "600" height = "400"></canvas>
+        </div>
+        <a href = "/radarChart" class = "linkChart">See Radar Chart</a>
+        <a href="/house" class="linkPage">Create More Devices</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementsByClassName('barChart');
+        const labels = ['Laptops','Monitors','Smartphones','E-readers','Digital Cameras','Portable Music Player'];
+        var deviceData=[4,2,2,1,1,2];
+        var chartData = {
+            labels: labels,
+            datasets: [{
+              label: 'Device Count by Category',
+              data: deviceData,
+              backgroundColor: [      // 设置每个柱形图的背景颜色
+                'rgba(255, 99, 132, 0.7)',
+                'rgba(255, 159, 64, 0.7)',
+                'rgba(255, 205, 86, 0.7)',
+                'rgba(75, 192, 192, 0.7)',
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(153, 102, 255, 0.7)'//,
+                //'rgba(201, 203, 207, 0.2)'
+              ],
+              borderColor: [     //设置每个柱形图边框线条颜色
+                'rgb(255, 99, 132)',
+                'rgb(255, 159, 64)',
+                'rgb(255, 205, 86)',
+                'rgb(75, 192, 192)',
+                'rgb(54, 162, 235)',
+                'rgb(153, 102, 255)'//,
+                //'rgb(201, 203, 207)'
+              ],
+              borderWidth: 1,     // 设置线条宽度
+            }]
+          };
+          const config = {
+            type: 'bar', // 设置图表类型
+            data: chartData,  // 设置数据集
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true // 设置 y 轴从 0 开始
+                }
+              }
+            },
+          };
+          var myChart = new Chart(ctx, config);
+    </script>
+    <script>
+      function updateBarChart () {
+          console.log(deviceData);
+          deviceData[0]=3;
+      }
+      window.onload = () => {
+          if (!sessionStorage.name) {
+              location.href = '/';
+          } else {
+              updateBarChart();
+          }
+      }
+    </script>
+    <script src="js/show.js"></script>
+    <script src="js/util.js"></script>
+</body>
+
+</html>
